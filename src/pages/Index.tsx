@@ -6,6 +6,7 @@ import { Experience } from "@/components/sections/Experience";
 import { Skills } from "@/components/sections/Skills";
 import { CTA } from "@/components/sections/CTA";
 import { Footer } from "@/components/sections/Footer";
+import { BackToTop } from "@/components/BackToTop";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -22,6 +23,7 @@ const Index = () => {
       <Skills />
       <CTA />
       <Footer />
+      <BackToTop />
     </div>
   );
 };
