@@ -2,15 +2,23 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, FileText, MapPin, Building, GraduationCap, Star, ArrowRight } from "lucide-react";
+import { Github, Linkedin, FileText, MapPin, Building, GraduationCap, Star, ArrowRight, Flag } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     setIsVisible(true);
+    
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const experiences = [
@@ -55,25 +63,54 @@ const Index = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.3,
-        staggerChildren: 0.2
+        staggerChildren: 0.15
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6 }
+      transition: { 
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    }
+  };
+
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      rotate: [-2, 2, -2],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
     }
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+      {/* Interactive cursor follower */}
+      <motion.div
+        className="fixed w-6 h-6 bg-red-500/20 rounded-full pointer-events-none z-50 mix-blend-multiply"
+        animate={{
+          x: mousePosition.x - 12,
+          y: mousePosition.y - 12,
+        }}
+        transition={{
+          type: "spring",
+          damping: 30,
+          stiffness: 200,
+        }}
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 to-blue-900/10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial="hidden"
@@ -82,59 +119,127 @@ const Index = () => {
             className="text-center"
           >
             <motion.div variants={itemVariants} className="mb-8">
-              <img 
+              <motion.img 
                 src="https://maurizio.ca/wp-content/uploads/2024/09/2.png" 
                 alt="Maurizio Cavalieri Logo" 
-                className="w-24 h-24 mx-auto mb-6 rounded-full bg-white/10 p-4"
+                className="w-28 h-28 mx-auto mb-8 rounded-full shadow-2xl"
+                whileHover={{ 
+                  scale: 1.1, 
+                  rotate: 5,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
               />
-              <h1 className="text-6xl md:text-8xl font-bold text-white mb-4">
+              <motion.h1 
+                className="text-6xl md:text-8xl font-bold text-slate-800 mb-6"
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ delay: 0.2, duration: 1, ease: "backOut" }}
+              >
                 Maurizio
-                <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <motion.span 
+                  className="bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent"
+                  animate={{ 
+                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                >
                   {" "}Cavalieri
-                </span>
-              </h1>
-              <div className="flex items-center justify-center gap-2 text-purple-300 mb-6">
-                <MapPin className="w-5 h-5" />
-                <span className="text-lg">Taipei, Taiwan</span>
-              </div>
+                </motion.span>
+              </motion.h1>
+              
+              <motion.div 
+                className="flex items-center justify-center gap-3 text-slate-600 mb-2"
+                variants={itemVariants}
+              >
+                <motion.div
+                  className="flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Flag className="w-6 h-6 text-red-600" />
+                  <span className="text-xl font-semibold">Canadian</span>
+                </motion.div>
+                <span className="text-slate-400">•</span>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-blue-600" />
+                  <span className="text-lg">Currently in Taipei, Taiwan</span>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                className="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-2 mb-6"
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, backgroundColor: "#fef2f2" }}
+              >
+                <span className="text-red-600 font-medium">🍁 Proud Canadian Professional</span>
+              </motion.div>
             </motion.div>
 
             <motion.div variants={itemVariants} className="mb-8">
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              <motion.p 
+                className="text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed font-medium"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+              >
                 Full Stack Developer • Global Marketing Director • AI Expert • Real Estate Investor
-              </p>
-              <p className="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">
+              </motion.p>
+              <motion.p 
+                className="text-lg text-slate-600 mt-4 max-w-3xl mx-auto"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+              >
                 Two decades of excellence across technology, marketing, and real estate. 
                 Transforming businesses through innovation and strategic leadership.
-              </p>
+              </motion.p>
             </motion.div>
 
             <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
-              <Button size="lg" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0">
-                <Linkedin className="w-5 h-5 mr-2" />
-                LinkedIn
-              </Button>
-              <Button size="lg" variant="outline" className="border-purple-400 text-purple-300 hover:bg-purple-500/20">
-                <Github className="w-5 h-5 mr-2" />
-                GitHub
-              </Button>
-              <Button size="lg" variant="outline" className="border-purple-400 text-purple-300 hover:bg-purple-500/20">
-                <FileText className="w-5 h-5 mr-2" />
-                Resume
-              </Button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-lg">
+                  <Linkedin className="w-5 h-5 mr-2" />
+                  LinkedIn
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
+                  <Github className="w-5 h-5 mr-2" />
+                  GitHub
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
+                  <FileText className="w-5 h-5 mr-2" />
+                  Resume
+                </Button>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-purple-500/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-pink-500/20 to-transparent rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
+        {/* Floating animated elements */}
+        <motion.div
+          className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-red-400/20 to-blue-400/20 rounded-full blur-sm"
+          variants={floatingVariants}
+          animate="animate"
+        />
+        <motion.div
+          className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-sm"
+          variants={floatingVariants}
+          animate="animate"
+          transition={{ delay: 1 }}
+        />
+        <motion.div
+          className="absolute top-1/2 right-20 w-16 h-16 bg-gradient-to-br from-indigo-400/20 to-red-400/20 rounded-full blur-sm"
+          variants={floatingVariants}
+          animate="animate"
+          transition={{ delay: 2 }}
+        />
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white/5 backdrop-blur-sm">
+      <section className="py-20 bg-white/60 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -143,10 +248,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
               Excellence Across Industries
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               From Fortune 500 companies to innovative startups, I've consistently delivered 
               exceptional results across technology, marketing, and real estate sectors.
             </p>
@@ -158,19 +263,20 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+              whileHover={{ y: -5 }}
             >
-              <Card className="bg-white/10 backdrop-blur-sm border-purple-500/30 h-full">
+              <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
-                    <Building className="w-6 h-6 text-purple-400" />
+                  <CardTitle className="text-slate-800 flex items-center gap-2">
+                    <Building className="w-6 h-6 text-blue-600" />
                     CEO & Founder
                   </CardTitle>
-                  <CardDescription className="text-gray-300">
+                  <CardDescription className="text-slate-600">
                     LevelThree Co.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300">
+                  <p className="text-slate-600">
                     Leading innovative solutions and driving business growth through strategic technology implementation.
                   </p>
                 </CardContent>
@@ -182,19 +288,20 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ y: -5 }}
             >
-              <Card className="bg-white/10 backdrop-blur-sm border-purple-500/30 h-full">
+              <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
-                    <Star className="w-6 h-6 text-yellow-400" />
+                  <CardTitle className="text-slate-800 flex items-center gap-2">
+                    <Star className="w-6 h-6 text-yellow-500" />
                     Top Rated Seller
                   </CardTitle>
-                  <CardDescription className="text-gray-300">
+                  <CardDescription className="text-slate-600">
                     Fiverr Freelancer
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300">
+                  <p className="text-slate-600">
                     Delivering exceptional freelance services with consistently outstanding client satisfaction.
                   </p>
                 </CardContent>
@@ -206,19 +313,20 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
+              whileHover={{ y: -5 }}
             >
-              <Card className="bg-white/10 backdrop-blur-sm border-purple-500/30 h-full">
+              <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="text-white flex items-center gap-2">
-                    <GraduationCap className="w-6 h-6 text-blue-400" />
+                  <CardTitle className="text-slate-800 flex items-center gap-2">
+                    <GraduationCap className="w-6 h-6 text-red-600" />
                     Alumni
                   </CardTitle>
-                  <CardDescription className="text-gray-300">
-                    University of Toronto
+                  <CardDescription className="text-slate-600">
+                    University of Toronto, Canada
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-300">
+                  <p className="text-slate-600">
                     Strong academic foundation from one of Canada's most prestigious institutions.
                   </p>
                 </CardContent>
@@ -238,10 +346,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
               World-Class Experience
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Trusted by industry leaders and prestigious organizations worldwide.
             </p>
           </motion.div>
@@ -254,14 +362,20 @@ const Index = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
               >
-                <Card className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">
+                <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 backdrop-blur-sm border-slate-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl">
                   <CardHeader>
-                    <CardTitle className="text-white flex items-center gap-3">
-                      <span className="text-2xl">{exp.icon}</span>
+                    <CardTitle className="text-slate-800 flex items-center gap-3">
+                      <motion.span 
+                        className="text-2xl"
+                        whileHover={{ scale: 1.2, rotate: 10 }}
+                      >
+                        {exp.icon}
+                      </motion.span>
                       {exp.company}
                     </CardTitle>
-                    <CardDescription className="text-gray-300">
+                    <CardDescription className="text-slate-600">
                       {exp.role} • {exp.type}
                     </CardDescription>
                   </CardHeader>
@@ -273,7 +387,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 bg-white/5 backdrop-blur-sm">
+      <section className="py-20 bg-white/60 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -282,10 +396,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
               Core Expertise
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Mastery across multiple disciplines, delivering comprehensive solutions.
             </p>
           </motion.div>
@@ -304,10 +418,11 @@ const Index = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
               >
                 <Badge 
                   variant="outline" 
-                  className="text-lg py-2 px-4 border-purple-400 text-purple-300 hover:bg-purple-500/20 transition-colors"
+                  className="text-lg py-3 px-6 border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-blue-400 transition-colors shadow-sm"
                 >
                   {skill}
                 </Badge>
@@ -326,29 +441,39 @@ const Index = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
               Ready to Build Something Great?
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-12">
               Let's connect and explore how we can create exceptional value together.
             </p>
             
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white border-0 text-lg px-8 py-6"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              Get In Touch
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </Button>
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 text-lg px-8 py-6 shadow-lg"
+              >
+                Get In Touch
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </motion.div>
+              </Button>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-black/50 backdrop-blur-sm">
+      <footer className="py-8 bg-slate-800/90 backdrop-blur-sm">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            © 2024 Maurizio Cavalieri. Building excellence across industries.
+          <p className="text-slate-300">
+            © 2024 Maurizio Cavalieri. Building excellence across industries from Canada to the world.
           </p>
         </div>
       </footer>
