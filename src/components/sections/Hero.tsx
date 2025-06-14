@@ -23,7 +23,7 @@ export const Hero = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: "easeOut"
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
@@ -31,6 +31,15 @@ export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 to-blue-900/10"></div>
+      
+      {/* Logo watermark in background */}
+      <div 
+        className="absolute inset-0 opacity-5 bg-center bg-no-repeat bg-contain"
+        style={{
+          backgroundImage: "url('https://maurizio.ca/wp-content/uploads/2024/09/2.png')",
+          backgroundSize: "40%",
+        }}
+      />
       
       {/* Floating animated elements */}
       <motion.div
@@ -144,6 +153,14 @@ export const Hero = () => {
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button size="lg" variant="outline" className="border-green-300 text-green-700 hover:bg-green-50 shadow-lg">
+                  <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.285 7.875c-.26-.26-.682-.26-.942 0l-7.285 7.285-3.285-3.285c-.26-.26-.682-.26-.942 0-.26.26-.26.682 0 .942l3.756 3.756c.26.26.682.26.942 0l7.756-7.756c.26-.26.26-.682 0-.942zm-17.285 8.125h-3v2h3v-2zm5-4h-8v2h8v-2zm3-4h-11v2h11v-2z"/>
+                  </svg>
+                  Fiverr
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
                   <FileText className="w-5 h-5 mr-2" />
                   Resume
@@ -155,9 +172,9 @@ export const Hero = () => {
           {/* Right Column - Image and Stats */}
           <motion.div variants={itemVariants} className="flex flex-col items-center space-y-8">
             <motion.img 
-              src="https://maurizio.ca/wp-content/uploads/2024/09/2.png" 
-              alt="Maurizio Cavalieri Logo" 
-              className="w-64 h-64 rounded-full shadow-2xl"
+              src="/lovable-uploads/8adf3f6a-3592-4fa3-b22e-6353866d49a7.png" 
+              alt="Maurizio Cavalieri" 
+              className="w-64 h-64 rounded-full shadow-2xl object-cover"
               whileHover={{ 
                 scale: 1.05, 
                 rotate: 2,
