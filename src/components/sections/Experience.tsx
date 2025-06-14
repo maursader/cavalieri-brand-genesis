@@ -7,21 +7,25 @@ export const Experience = () => {
     {
       company: "HP",
       type: "Enterprise Solutions & Security",
+      description: "Delivered cutting-edge technology solutions and advanced security implementations that strengthened enterprise infrastructure and operational excellence.",
       icon: "🛡️"
     },
     {
       company: "Apple",
       type: "Innovation & Development",
+      description: "Contributed to groundbreaking technology initiatives, applying innovative problem-solving and technical expertise to enhance user experiences and system performance.",
       icon: "🔍"
     },
     {
       company: "University of Toronto",
-      type: "Technology & Research at one of Canada's most prestigious institutions",
+      type: "Technology & Research",
+      description: "Spearheaded technology research and development projects at one of Canada's most prestigious institutions, driving innovation in advanced computing solutions.",
       icon: "📊"
     },
     {
       company: "GTAA (Toronto Pearson)",
       type: "Critical Infrastructure Technology",
+      description: "Led technology initiatives for one of North America's busiest airports, ensuring robust systems and seamless operations for millions of travelers.",
       icon: "🏢"
     }
   ];
@@ -69,6 +73,11 @@ export const Experience = () => {
                     {exp.type}
                   </CardDescription>
                 </CardHeader>
+                <CardContent>
+                  <p className="text-slate-600">
+                    {exp.description}
+                  </p>
+                </CardContent>
               </Card>
             </motion.div>
           ))}

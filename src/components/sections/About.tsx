@@ -168,7 +168,7 @@ export const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Strong academic foundation in computer science and engineering from one of Canada's most prestigious institutions.
+                  Proud alumnus of one of Canada's most prestigious institutions, building on a strong academic foundation to drive innovation and excellence in technology leadership.
                 </p>
               </CardContent>
             </Card>
