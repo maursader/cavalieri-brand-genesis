@@ -2,23 +2,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, FileText, MapPin, Building, GraduationCap, Star, ArrowRight, Flag } from "lucide-react";
+import { Github, Linkedin, FileText, MapPin, Building, GraduationCap, Star, ArrowRight, Flag, Code, Briefcase, Trophy } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const Index = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     setIsVisible(true);
-    
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   const experiences = [
@@ -30,7 +22,7 @@ const Index = () => {
     },
     {
       company: "Apple",
-      role: "Software Developer",
+      role: "Software Developer", 
       type: "Technology",
       icon: "🍎"
     },
@@ -50,7 +42,7 @@ const Index = () => {
 
   const skills = [
     "Full Stack Development",
-    "Global Marketing Direction",
+    "Global Marketing Direction", 
     "AI & Machine Learning",
     "Real Estate Investment",
     "Mortgage Expertise",
@@ -75,7 +67,7 @@ const Index = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: [0.25, 0.1, 0.25, 1]
+        ease: "easeOut"
       }
     }
   };
@@ -94,130 +86,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Interactive cursor follower */}
-      <motion.div
-        className="fixed w-6 h-6 bg-red-500/20 rounded-full pointer-events-none z-50 mix-blend-multiply"
-        animate={{
-          x: mousePosition.x - 12,
-          y: mousePosition.y - 12,
-        }}
-        transition={{
-          type: "spring",
-          damping: 30,
-          stiffness: 200,
-        }}
-      />
-
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 to-blue-900/10"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial="hidden"
-            animate={isVisible ? "visible" : "hidden"}
-            variants={containerVariants}
-            className="text-center"
-          >
-            <motion.div variants={itemVariants} className="mb-8">
-              <motion.img 
-                src="https://maurizio.ca/wp-content/uploads/2024/09/2.png" 
-                alt="Maurizio Cavalieri Logo" 
-                className="w-28 h-28 mx-auto mb-8 rounded-full shadow-2xl"
-                whileHover={{ 
-                  scale: 1.1, 
-                  rotate: 5,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
-                }}
-                transition={{ type: "spring", stiffness: 300 }}
-              />
-              <motion.h1 
-                className="text-6xl md:text-8xl font-bold text-slate-800 mb-6"
-                initial={{ scale: 0.5, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 1, ease: "backOut" }}
-              >
-                Maurizio
-                <motion.span 
-                  className="bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent"
-                  animate={{ 
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  {" "}Cavalieri
-                </motion.span>
-              </motion.h1>
-              
-              <motion.div 
-                className="flex items-center justify-center gap-3 text-slate-600 mb-2"
-                variants={itemVariants}
-              >
-                <motion.div
-                  className="flex items-center gap-2"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Flag className="w-6 h-6 text-red-600" />
-                  <span className="text-xl font-semibold">Canadian</span>
-                </motion.div>
-                <span className="text-slate-400">•</span>
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-blue-600" />
-                  <span className="text-lg">Currently in Taipei, Taiwan</span>
-                </div>
-              </motion.div>
-              
-              <motion.div
-                className="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-2 mb-6"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05, backgroundColor: "#fef2f2" }}
-              >
-                <span className="text-red-600 font-medium">🍁 Proud Canadian Professional</span>
-              </motion.div>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="mb-8">
-              <motion.p 
-                className="text-xl md:text-2xl text-slate-700 max-w-4xl mx-auto leading-relaxed font-medium"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              >
-                Full Stack Developer • Global Marketing Director • AI Expert • Real Estate Investor
-              </motion.p>
-              <motion.p 
-                className="text-lg text-slate-600 mt-4 max-w-3xl mx-auto"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.8 }}
-              >
-                Two decades of excellence across technology, marketing, and real estate. 
-                Transforming businesses through innovation and strategic leadership.
-              </motion.p>
-            </motion.div>
-
-            <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-4 mb-12">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-lg">
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
-                  <Github className="w-5 h-5 mr-2" />
-                  GitHub
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
-                  <FileText className="w-5 h-5 mr-2" />
-                  Resume
-                </Button>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-
+        
         {/* Floating animated elements */}
         <motion.div
           className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-red-400/20 to-blue-400/20 rounded-full blur-sm"
@@ -236,11 +108,137 @@ const Index = () => {
           animate="animate"
           transition={{ delay: 2 }}
         />
+
+        <div className="container mx-auto px-6 relative z-10 max-w-6xl">
+          <motion.div
+            initial="hidden"
+            animate={isVisible ? "visible" : "hidden"}
+            variants={containerVariants}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            {/* Left Column - Text Content */}
+            <motion.div variants={itemVariants} className="space-y-8">
+              <motion.div
+                className="inline-flex items-center gap-2 bg-red-50 border border-red-200 rounded-full px-4 py-2"
+                whileHover={{ scale: 1.05, backgroundColor: "#fef2f2" }}
+              >
+                <Flag className="w-5 h-5 text-red-600" />
+                <span className="text-red-600 font-medium">🍁 Proud Canadian Professional</span>
+              </motion.div>
+
+              <div>
+                <motion.h1 
+                  className="text-5xl md:text-7xl font-bold text-slate-800 mb-4"
+                  initial={{ scale: 0.5, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.2, duration: 1, ease: "backOut" }}
+                >
+                  Maurizio
+                  <motion.span 
+                    className="bg-gradient-to-r from-red-600 to-blue-600 bg-clip-text text-transparent block"
+                  >
+                    Cavalieri
+                  </motion.span>
+                </motion.h1>
+                
+                <motion.div 
+                  className="flex items-center gap-3 text-slate-600 mb-6"
+                  variants={itemVariants}
+                >
+                  <div className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-blue-600" />
+                    <span className="text-lg">Currently in Taipei, Taiwan</span>
+                  </div>
+                </motion.div>
+              </div>
+
+              <motion.p 
+                className="text-xl text-slate-700 leading-relaxed font-medium"
+                variants={itemVariants}
+              >
+                Full Stack Developer • Global Marketing Director • AI Expert • Real Estate Investor
+              </motion.p>
+              
+              <motion.p 
+                className="text-lg text-slate-600"
+                variants={itemVariants}
+              >
+                Two decades of excellence across technology, marketing, and real estate. 
+                Transforming businesses through innovation and strategic leadership.
+              </motion.p>
+
+              <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-lg">
+                    <Linkedin className="w-5 h-5 mr-2" />
+                    LinkedIn
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
+                    <Github className="w-5 h-5 mr-2" />
+                    GitHub
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
+                    <FileText className="w-5 h-5 mr-2" />
+                    Resume
+                  </Button>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Column - Image and Stats */}
+            <motion.div variants={itemVariants} className="flex flex-col items-center space-y-8">
+              <motion.img 
+                src="https://maurizio.ca/wp-content/uploads/2024/09/2.png" 
+                alt="Maurizio Cavalieri Logo" 
+                className="w-64 h-64 rounded-full shadow-2xl"
+                whileHover={{ 
+                  scale: 1.05, 
+                  rotate: 2,
+                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                }}
+                transition={{ type: "spring", stiffness: 300 }}
+              />
+              
+              <div className="grid grid-cols-3 gap-6 w-full max-w-md">
+                <motion.div 
+                  className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
+                  whileHover={{ y: -5 }}
+                >
+                  <Trophy className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-slate-800">20+</div>
+                  <div className="text-sm text-slate-600">Years Experience</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
+                  whileHover={{ y: -5 }}
+                >
+                  <Code className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-slate-800">5★</div>
+                  <div className="text-sm text-slate-600">Top Rated</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
+                  whileHover={{ y: -5 }}
+                >
+                  <Briefcase className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                  <div className="text-2xl font-bold text-slate-800">CEO</div>
+                  <div className="text-sm text-slate-600">LevelThree Co</div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-white/60 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-white/80 backdrop-blur-sm">
+        <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -314,6 +312,7 @@ const Index = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
+              className="md:col-span-2 lg:col-span-1"
             >
               <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader>
@@ -337,8 +336,8 @@ const Index = () => {
       </section>
 
       {/* Experience Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+        <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -354,7 +353,7 @@ const Index = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8">
             {experiences.map((exp, index) => (
               <motion.div
                 key={exp.company}
@@ -364,7 +363,7 @@ const Index = () => {
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.02, y: -5 }}
               >
-                <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 backdrop-blur-sm border-slate-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <Card className="bg-white/80 backdrop-blur-sm border-slate-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl">
                   <CardHeader>
                     <CardTitle className="text-slate-800 flex items-center gap-3">
                       <motion.span 
@@ -387,8 +386,8 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 bg-white/60 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
+      <section className="py-20 bg-white/80 backdrop-blur-sm">
+        <div className="container mx-auto px-6 max-w-6xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -433,18 +432,18 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 text-center">
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-indigo-700">
+        <div className="container mx-auto px-6 text-center max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Ready to Build Something Great?
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-12">
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-12">
               Let's connect and explore how we can create exceptional value together.
             </p>
             
@@ -454,7 +453,7 @@ const Index = () => {
             >
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 text-lg px-8 py-6 shadow-lg"
+                className="bg-white text-blue-600 hover:bg-blue-50 border-0 text-lg px-8 py-6 shadow-lg font-semibold"
               >
                 Get In Touch
                 <motion.div
@@ -470,8 +469,8 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 bg-slate-800/90 backdrop-blur-sm">
-        <div className="container mx-auto px-4 text-center">
+      <footer className="py-8 bg-slate-800">
+        <div className="container mx-auto px-6 text-center max-w-6xl">
           <p className="text-slate-300">
             © 2024 Maurizio Cavalieri. Building excellence across industries from Canada to the world.
           </p>
