@@ -6,26 +6,26 @@ export const Experience = () => {
   const experiences = [
     {
       company: "HP",
-      role: "Senior Security Engineer",
-      type: "Enterprise Security Operations",
+      role: "Senior Technology Lead",
+      type: "Enterprise Solutions & Security",
       icon: "🛡️"
     },
     {
       company: "Apple",
-      role: "SOC Analyst & Developer", 
-      type: "Advanced Threat Detection",
+      role: "Systems Engineer & Developer", 
+      type: "Innovation & Development",
       icon: "🔍"
     },
     {
       company: "University of Toronto",
-      role: "Cybersecurity Specialist",
+      role: "Technology Specialist",
       type: "Research & Development",
       icon: "📊"
     },
     {
       company: "GTAA (Toronto Pearson)",
-      role: "Security Operations Lead",
-      type: "Critical Infrastructure Protection",
+      role: "Technology Operations Lead",
+      type: "Critical Infrastructure",
       icon: "🏢"
     }
   ];
@@ -41,10 +41,10 @@ export const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Elite Security Operations Experience
+            Proven Track Record of Excellence
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Trusted by industry leaders to build, manage, and optimize world-class SOC operations and data analytics programs.
+            Trusted by industry leaders to deliver innovative technology solutions and drive digital transformation across diverse sectors.
           </p>
         </motion.div>
 

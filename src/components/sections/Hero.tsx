@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Github, Linkedin, FileText, MapPin, Flag, ArrowRight, Trophy, Code, Briefcase } from "lucide-react";
+import { Github, Linkedin, FileText, MapPin, Flag, Calendar, Briefcase } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const Hero = () => {
@@ -36,7 +36,7 @@ export const Hero = () => {
       <div 
         className="absolute inset-0 opacity-5 bg-center bg-no-repeat bg-contain"
         style={{
-          backgroundImage: "url('https://maurizio.ca/wp-content/uploads/2024/09/2.png')",
+          backgroundImage: "url('/lovable-uploads/8adf3f6a-3592-4fa3-b22e-6353866d49a7.png')",
           backgroundSize: "40%",
         }}
       />
@@ -128,15 +128,15 @@ export const Hero = () => {
               className="text-xl text-slate-700 leading-relaxed font-medium"
               variants={itemVariants}
             >
-              Full Stack Developer • Cybersecurity Expert • Data Analytics Specialist • SOC Operations Leader
+              Full Stack Developer • Cybersecurity Expert • Data Analytics Specialist • Business Leader
             </motion.p>
             
             <motion.p 
               className="text-lg text-slate-600"
               variants={itemVariants}
             >
-              Empowering SOC analysts and data professionals with cutting-edge solutions. 
-              Two decades of expertise in threat detection, incident response, and advanced analytics.
+              Passionate about creating innovative solutions that drive business growth. 
+              Two decades of experience in technology, security, and data analytics with a focus on empowering teams and delivering exceptional results.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
@@ -153,11 +153,38 @@ export const Hero = () => {
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="border-green-300 text-green-700 hover:bg-green-50 shadow-lg">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-green-300 text-green-700 hover:bg-green-50 shadow-lg"
+                  onClick={() => window.open('https://www.fiverr.com/maurizio_c', '_blank')}
+                >
                   <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M22.285 7.875c-.26-.26-.682-.26-.942 0l-7.285 7.285-3.285-3.285c-.26-.26-.682-.26-.942 0-.26.26-.26.682 0 .942l3.756 3.756c.26.26.682.26.942 0l7.756-7.756c.26-.26.26-.682 0-.942zm-17.285 8.125h-3v2h3v-2zm5-4h-8v2h8v-2zm3-4h-11v2h11v-2z"/>
                   </svg>
                   Fiverr
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg"
+                  onClick={() => window.open('https://www.upwork.com/maurizio-c', '_blank')}
+                >
+                  <Briefcase className="w-5 h-5 mr-2" />
+                  Upwork
+                </Button>
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-orange-300 text-orange-700 hover:bg-orange-50 shadow-lg"
+                  onClick={() => window.open('https://tidycal.com/l3', '_blank')}
+                >
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Book a Call
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -188,7 +215,12 @@ export const Hero = () => {
                 className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
                 whileHover={{ y: -5 }}
               >
-                <Trophy className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
+                <motion.div 
+                  className="text-2xl mx-auto mb-2"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                >
+                  🏆
+                </motion.div>
                 <div className="text-2xl font-bold text-slate-800">20+</div>
                 <div className="text-sm text-slate-600">Years Experience</div>
               </motion.div>
@@ -197,7 +229,12 @@ export const Hero = () => {
                 className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
                 whileHover={{ y: -5 }}
               >
-                <Code className="w-8 h-8 text-blue-600 mx-auto mb-2" />
+                <motion.div 
+                  className="text-2xl mx-auto mb-2"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                >
+                  💻
+                </motion.div>
                 <div className="text-2xl font-bold text-slate-800">5★</div>
                 <div className="text-sm text-slate-600">Top Rated</div>
               </motion.div>
@@ -206,7 +243,12 @@ export const Hero = () => {
                 className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
                 whileHover={{ y: -5 }}
               >
-                <Briefcase className="w-8 h-8 text-green-600 mx-auto mb-2" />
+                <motion.div 
+                  className="text-2xl mx-auto mb-2"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                >
+                  🚀
+                </motion.div>
                 <div className="text-2xl font-bold text-slate-800">CEO</div>
                 <div className="text-sm text-slate-600">LevelThree Co</div>
               </motion.div>

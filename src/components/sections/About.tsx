@@ -15,11 +15,11 @@ export const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Empowering Security & Analytics Teams
+            Innovation Through Technology
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            From Fortune 500 SOCs to innovative data teams, I've consistently delivered 
-            exceptional results in cybersecurity operations, threat detection, and advanced analytics.
+            From Fortune 500 companies to innovative startups, I've consistently delivered 
+            exceptional results across technology, security, and business transformation initiatives.
           </p>
         </motion.div>
 
@@ -35,15 +35,15 @@ export const About = () => {
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
                   <Shield className="w-6 h-6 text-red-600" />
-                  SOC Operations Expert
+                  Cybersecurity Expert
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Security Operations Center Leadership
+                  Enterprise Security & Risk Management
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Leading threat detection initiatives, incident response protocols, and advanced security monitoring for enterprise environments.
+                  Leading security initiatives, threat detection, and risk management strategies for enterprise environments, including SOC operations and incident response.
                 </p>
               </CardContent>
             </Card>
@@ -60,15 +60,15 @@ export const About = () => {
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
                   <BarChart3 className="w-6 h-6 text-blue-600" />
-                  Data Analytics Specialist
+                  Data Analytics Leader
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Advanced Analytics & Visualization
+                  Advanced Analytics & Business Intelligence
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Transforming complex security data into actionable insights through advanced analytics, machine learning, and custom dashboards.
+                  Transforming complex data into actionable insights through advanced analytics, machine learning, and custom dashboards that drive strategic decisions.
                 </p>
               </CardContent>
             </Card>
@@ -88,12 +88,12 @@ export const About = () => {
                   Team Development
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  SOC & Analytics Team Training
+                  Leadership & Mentorship
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Mentoring and developing high-performing SOC analysts and data professionals to excel in cybersecurity operations.
+                  Building and mentoring high-performing teams across technology, security, and analytics to achieve exceptional results and drive innovation.
                 </p>
               </CardContent>
             </Card>
@@ -118,7 +118,7 @@ export const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Leading innovative cybersecurity solutions and driving business growth through strategic technology implementation.
+                  Leading innovative technology solutions and driving business growth through strategic implementation and entrepreneurial vision.
                 </p>
               </CardContent>
             </Card>
@@ -135,15 +135,15 @@ export const About = () => {
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
                   <Star className="w-6 h-6 text-yellow-500" />
-                  Top Rated Seller
+                  Top Rated Professional
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Fiverr Cybersecurity Expert
+                  Freelance Excellence
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Delivering exceptional cybersecurity and data analytics services with consistently outstanding client satisfaction.
+                  Delivering exceptional technology and consulting services with consistently outstanding client satisfaction across multiple platforms.
                 </p>
               </CardContent>
             </Card>
@@ -168,7 +168,7 @@ export const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Strong academic foundation in computer science and cybersecurity from one of Canada's most prestigious institutions.
+                  Strong academic foundation in computer science and engineering from one of Canada's most prestigious institutions.
                 </p>
               </CardContent>
             </Card>
