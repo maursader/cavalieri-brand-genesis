@@ -23,7 +23,7 @@ export const Hero = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -36,7 +36,7 @@ export const Hero = () => {
       <div 
         className="absolute inset-0 opacity-5 bg-center bg-no-repeat bg-contain"
         style={{
-          backgroundImage: "url('/lovable-uploads/8adf3f6a-3592-4fa3-b22e-6353866d49a7.png')",
+          backgroundImage: "url('/lovable-uploads/e01010c2-b324-4a89-90af-9bd2306312eb.png')",
           backgroundSize: "40%",
         }}
       />
@@ -103,7 +103,7 @@ export const Hero = () => {
                 className="text-5xl md:text-7xl font-bold text-slate-800 mb-4"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+                transition={{ delay: 0.2, duration: 1, ease: [0.68, -0.55, 0.265, 1.55] }}
               >
                 Maurizio
                 <motion.span 
