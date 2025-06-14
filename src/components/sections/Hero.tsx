@@ -23,7 +23,7 @@ export const Hero = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: "easeOut"
       }
     }
   };
@@ -51,7 +51,7 @@ export const Hero = () => {
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: [0.4, 0, 0.6, 1]
+          ease: "easeInOut"
         }}
       />
       <motion.div
@@ -63,7 +63,7 @@ export const Hero = () => {
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: [0.4, 0, 0.6, 1],
+          ease: "easeInOut",
           delay: 1
         }}
       />
@@ -76,7 +76,7 @@ export const Hero = () => {
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: [0.4, 0, 0.6, 1],
+          ease: "easeInOut",
           delay: 2
         }}
       />
@@ -103,7 +103,7 @@ export const Hero = () => {
                 className="text-5xl md:text-7xl font-bold text-slate-800 mb-4"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 1, ease: [0.175, 0.885, 0.32, 1.275] }}
+                transition={{ delay: 0.2, duration: 1, ease: "backOut" }}
               >
                 Maurizio
                 <motion.span 
@@ -128,15 +128,15 @@ export const Hero = () => {
               className="text-xl text-slate-700 leading-relaxed font-medium"
               variants={itemVariants}
             >
-              Full Stack Developer • Global Marketing Director • AI Expert • Real Estate Investor
+              Full Stack Developer • Cybersecurity Expert • Data Analytics Specialist • SOC Operations Leader
             </motion.p>
             
             <motion.p 
               className="text-lg text-slate-600"
               variants={itemVariants}
             >
-              Two decades of excellence across technology, marketing, and real estate. 
-              Transforming businesses through innovation and strategic leadership.
+              Empowering SOC analysts and data professionals with cutting-edge solutions. 
+              Two decades of expertise in threat detection, incident response, and advanced analytics.
             </motion.p>
 
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4">

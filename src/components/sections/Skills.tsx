@@ -4,12 +4,14 @@ import { motion } from "framer-motion";
 
 export const Skills = () => {
   const skills = [
+    "SOC Operations & Threat Detection",
+    "Data Analytics & Visualization", 
+    "Incident Response & Forensics",
+    "SIEM/SOAR Implementation",
+    "Threat Intelligence Analysis",
+    "Security Architecture Design",
     "Full Stack Development",
-    "Global Marketing Direction", 
-    "AI & Machine Learning",
-    "Real Estate Investment",
-    "Mortgage Expertise",
-    "Business Strategy"
+    "AI & Machine Learning"
   ];
 
   return (
@@ -23,10 +25,10 @@ export const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Core Expertise
+            Cybersecurity & Analytics Expertise
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Mastery across multiple disciplines, delivering comprehensive solutions.
+            Specialized in empowering SOC analysts and data professionals with advanced security operations and analytical capabilities.
           </p>
         </motion.div>
 

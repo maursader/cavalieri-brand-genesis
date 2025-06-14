@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building, Star, GraduationCap } from "lucide-react";
+import { Building, Star, GraduationCap, Shield, BarChart3, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const About = () => {
@@ -15,11 +15,11 @@ export const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Excellence Across Industries
+            Empowering Security & Analytics Teams
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            From Fortune 500 companies to innovative startups, I've consistently delivered 
-            exceptional results across technology, marketing, and real estate sectors.
+            From Fortune 500 SOCs to innovative data teams, I've consistently delivered 
+            exceptional results in cybersecurity operations, threat detection, and advanced analytics.
           </p>
         </motion.div>
 
@@ -34,16 +34,16 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <Building className="w-6 h-6 text-blue-600" />
-                  CEO & Founder
+                  <Shield className="w-6 h-6 text-red-600" />
+                  SOC Operations Expert
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  LevelThree Co.
+                  Security Operations Center Leadership
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Leading innovative solutions and driving business growth through strategic technology implementation.
+                  Leading threat detection initiatives, incident response protocols, and advanced security monitoring for enterprise environments.
                 </p>
               </CardContent>
             </Card>
@@ -59,16 +59,16 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <Star className="w-6 h-6 text-yellow-500" />
-                  Top Rated Seller
+                  <BarChart3 className="w-6 h-6 text-blue-600" />
+                  Data Analytics Specialist
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Fiverr Freelancer
+                  Advanced Analytics & Visualization
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Delivering exceptional freelance services with consistently outstanding client satisfaction.
+                  Transforming complex security data into actionable insights through advanced analytics, machine learning, and custom dashboards.
                 </p>
               </CardContent>
             </Card>
@@ -80,7 +80,81 @@ export const About = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
             whileHover={{ y: -5 }}
-            className="md:col-span-2 lg:col-span-1"
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-slate-800 flex items-center gap-2">
+                  <Users className="w-6 h-6 text-green-600" />
+                  Team Development
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  SOC & Analytics Team Training
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Mentoring and developing high-performing SOC analysts and data professionals to excel in cybersecurity operations.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -5 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-slate-800 flex items-center gap-2">
+                  <Building className="w-6 h-6 text-purple-600" />
+                  CEO & Founder
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  LevelThree Co.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Leading innovative cybersecurity solutions and driving business growth through strategic technology implementation.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -5 }}
+          >
+            <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-slate-800 flex items-center gap-2">
+                  <Star className="w-6 h-6 text-yellow-500" />
+                  Top Rated Seller
+                </CardTitle>
+                <CardDescription className="text-slate-600">
+                  Fiverr Cybersecurity Expert
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600">
+                  Delivering exceptional cybersecurity and data analytics services with consistently outstanding client satisfaction.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -5 }}
           >
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
@@ -94,7 +168,7 @@ export const About = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Strong academic foundation from one of Canada's most prestigious institutions.
+                  Strong academic foundation in computer science and cybersecurity from one of Canada's most prestigious institutions.
                 </p>
               </CardContent>
             </Card>
