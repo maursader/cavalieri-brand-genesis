@@ -23,13 +23,23 @@ export const Hero = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: "easeOut"
       }
     }
   };
 
+  // Professional geometric animation pattern
+  const geometricElements = Array.from({ length: 8 }, (_, i) => ({
+    id: i,
+    size: Math.random() * 60 + 20,
+    x: Math.random() * 100,
+    y: Math.random() * 100,
+    delay: Math.random() * 4,
+    duration: 15 + Math.random() * 10,
+  }));
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900/5 to-blue-900/10"></div>
       
       {/* Logo watermark in background */}
@@ -41,45 +51,62 @@ export const Hero = () => {
         }}
       />
       
-      {/* Floating animated elements */}
-      <motion.div
-        className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-red-400/20 to-blue-400/20 rounded-full blur-sm"
-        animate={{
-          y: [-10, 10, -10],
-          rotate: [-2, 2, -2],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-sm"
-        animate={{
-          y: [-10, 10, -10],
-          rotate: [-2, 2, -2],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 1
-        }}
-      />
-      <motion.div
-        className="absolute top-1/2 right-20 w-16 h-16 bg-gradient-to-br from-indigo-400/20 to-red-400/20 rounded-full blur-sm"
-        animate={{
-          y: [-10, 10, -10],
-          rotate: [-2, 2, -2],
-        }}
-        transition={{
-          duration: 6,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: 2
-        }}
-      />
+      {/* Professional geometric background pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div 
+            className="w-full h-full"
+            style={{
+              backgroundImage: `
+                linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+                linear-gradient(180deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px)
+              `,
+              backgroundSize: '80px 80px'
+            }}
+          />
+        </div>
+        
+        {/* Animated geometric elements */}
+        {geometricElements.map((element) => (
+          <motion.div
+            key={element.id}
+            className="absolute border border-slate-300/20 backdrop-blur-sm"
+            style={{
+              width: element.size,
+              height: element.size,
+              left: `${element.x}%`,
+              top: `${element.y}%`,
+            }}
+            animate={{
+              rotate: [0, 360],
+              scale: [1, 1.1, 1],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: element.duration,
+              repeat: Infinity,
+              ease: "linear",
+              delay: element.delay,
+            }}
+          >
+            {element.id % 3 === 0 && (
+              <div className="w-full h-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 rounded-sm" />
+            )}
+            {element.id % 3 === 1 && (
+              <div className="w-full h-full border-l-2 border-slate-400/20 transform rotate-45" />
+            )}
+            {element.id % 3 === 2 && (
+              <div className="w-full h-full rounded-full bg-gradient-to-r from-slate-400/10 to-blue-400/10" />
+            )}
+          </motion.div>
+        ))}
+        
+        {/* Professional light rays */}
+        <div className="absolute top-0 left-1/4 w-px h-1/3 bg-gradient-to-b from-blue-400/20 to-transparent transform -skew-x-12 animate-pulse"></div>
+        <div className="absolute top-1/4 right-1/3 w-px h-1/4 bg-gradient-to-b from-indigo-400/20 to-transparent transform skew-x-12 animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/3 left-1/3 w-px h-1/4 bg-gradient-to-t from-slate-400/20 to-transparent transform -skew-x-6 animate-pulse" style={{ animationDelay: '4s' }}></div>
+      </div>
 
       <div className="container mx-auto px-6 relative z-10 max-w-6xl">
         <motion.div
@@ -103,7 +130,7 @@ export const Hero = () => {
                 className="text-5xl md:text-7xl font-bold text-slate-800 mb-4"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 1, ease: [0.68, -0.55, 0.265, 1.55] }}
+                transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
               >
                 Maurizio
                 <motion.span 
