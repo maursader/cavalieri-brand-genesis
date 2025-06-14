@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 export const Skills = () => {
   const skills = [
     "Full Stack Development",
+    "AI & Machine Learning",
     "Cybersecurity & SOC Operations", 
     "Data Analytics & Visualization",
     "Cloud Architecture",
     "DevOps & Automation",
-    "AI & Machine Learning",
+    "Artificial Intelligence Solutions",
     "Business Strategy",
     "Team Leadership"
   ];
@@ -25,10 +26,10 @@ export const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Technical Expertise & Leadership
+            Technical Expertise & AI Leadership
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Combining deep technical knowledge with strategic business thinking to deliver innovative solutions that drive growth and efficiency.
+            Combining deep technical knowledge with cutting-edge AI expertise and strategic business thinking to deliver innovative solutions that drive growth and digital transformation.
           </p>
         </motion.div>
 

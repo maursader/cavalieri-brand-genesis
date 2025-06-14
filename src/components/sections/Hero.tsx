@@ -23,7 +23,7 @@ export const Hero = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: "easeOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -103,7 +103,7 @@ export const Hero = () => {
                 className="text-5xl md:text-7xl font-bold text-slate-800 mb-4"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 1, ease: "backOut" }}
+                transition={{ delay: 0.2, duration: 1, ease: [0.68, -0.55, 0.265, 1.55] }}
               >
                 Maurizio
                 <motion.span 
@@ -128,71 +128,78 @@ export const Hero = () => {
               className="text-xl text-slate-700 leading-relaxed font-medium"
               variants={itemVariants}
             >
-              Full Stack Developer • Cybersecurity Expert • Data Analytics Specialist • Business Leader
+              Full Stack Developer • AI & Machine Learning Expert • Cybersecurity Specialist • Data Analytics Professional
             </motion.p>
             
             <motion.p 
               className="text-lg text-slate-600"
               variants={itemVariants}
             >
-              Passionate about creating innovative solutions that drive business growth. 
-              Two decades of experience in technology, security, and data analytics with a focus on empowering teams and delivering exceptional results.
+              Passionate about leveraging artificial intelligence and advanced data analytics to create innovative solutions that drive business transformation. 
+              Two decades of experience in technology, security, and AI implementation with a focus on empowering teams and delivering exceptional results.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-lg">
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  LinkedIn
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
-                  <Github className="w-5 h-5 mr-2" />
-                  GitHub
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-green-300 text-green-700 hover:bg-green-50 shadow-lg"
-                  onClick={() => window.open('https://www.fiverr.com/maurizio_c', '_blank')}
-                >
-                  <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M22.285 7.875c-.26-.26-.682-.26-.942 0l-7.285 7.285-3.285-3.285c-.26-.26-.682-.26-.942 0-.26.26-.26.682 0 .942l3.756 3.756c.26.26.682.26.942 0l7.756-7.756c.26-.26.26-.682 0-.942zm-17.285 8.125h-3v2h3v-2zm5-4h-8v2h8v-2zm3-4h-11v2h11v-2z"/>
-                  </svg>
-                  Fiverr
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg"
-                  onClick={() => window.open('https://www.upwork.com/maurizio-c', '_blank')}
-                >
-                  <Briefcase className="w-5 h-5 mr-2" />
-                  Upwork
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
-                  className="border-orange-300 text-orange-700 hover:bg-orange-50 shadow-lg"
-                  onClick={() => window.open('https://tidycal.com/l3', '_blank')}
-                >
-                  <Calendar className="w-5 h-5 mr-2" />
-                  Book a Call
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button size="lg" variant="outline" className="border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
-                  <FileText className="w-5 h-5 mr-2" />
-                  Resume
-                </Button>
-              </motion.div>
+            <motion.div variants={itemVariants} className="space-y-4">
+              {/* First row of buttons */}
+              <div className="grid grid-cols-3 gap-4">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-lg">
+                    <Linkedin className="w-5 h-5 mr-2" />
+                    LinkedIn
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
+                    <Github className="w-5 h-5 mr-2" />
+                    GitHub
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button size="lg" variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
+                    <FileText className="w-5 h-5 mr-2" />
+                    Resume
+                  </Button>
+                </motion.div>
+              </div>
+              
+              {/* Second row of buttons */}
+              <div className="grid grid-cols-3 gap-4">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="w-full border-green-300 text-green-700 hover:bg-green-50 shadow-lg"
+                    onClick={() => window.open('https://www.fiverr.com/maurizio_c', '_blank')}
+                  >
+                    <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.285 7.875c-.26-.26-.682-.26-.942 0l-7.285 7.285-3.285-3.285c-.26-.26-.682-.26-.942 0-.26.26-.26.682 0 .942l3.756 3.756c.26.26.682.26.942 0l7.756-7.756c.26-.26.26-.682 0-.942zm-17.285 8.125h-3v2h3v-2zm5-4h-8v2h8v-2zm3-4h-11v2h11v-2z"/>
+                    </svg>
+                    Fiverr
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="w-full border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg"
+                    onClick={() => window.open('https://www.upwork.com/maurizio-c', '_blank')}
+                  >
+                    <Briefcase className="w-5 h-5 mr-2" />
+                    Upwork
+                  </Button>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="w-full border-orange-300 text-orange-700 hover:bg-orange-50 shadow-lg"
+                    onClick={() => window.open('https://tidycal.com/l3', '_blank')}
+                  >
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Book a Call
+                  </Button>
+                </motion.div>
+              </div>
             </motion.div>
           </motion.div>
 

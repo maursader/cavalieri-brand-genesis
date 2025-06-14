@@ -6,26 +6,22 @@ export const Experience = () => {
   const experiences = [
     {
       company: "HP",
-      role: "Senior Technology Lead",
       type: "Enterprise Solutions & Security",
       icon: "🛡️"
     },
     {
       company: "Apple",
-      role: "Systems Engineer & Developer", 
       type: "Innovation & Development",
       icon: "🔍"
     },
     {
       company: "University of Toronto",
-      role: "Technology Specialist",
-      type: "Research & Development",
+      type: "Technology & Research at one of Canada's most prestigious institutions",
       icon: "📊"
     },
     {
       company: "GTAA (Toronto Pearson)",
-      role: "Technology Operations Lead",
-      type: "Critical Infrastructure",
+      type: "Critical Infrastructure Technology",
       icon: "🏢"
     }
   ];
@@ -70,7 +66,7 @@ export const Experience = () => {
                     {exp.company}
                   </CardTitle>
                   <CardDescription className="text-slate-600">
-                    {exp.role} • {exp.type}
+                    {exp.type}
                   </CardDescription>
                 </CardHeader>
               </Card>
