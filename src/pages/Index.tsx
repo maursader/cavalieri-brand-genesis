@@ -67,19 +67,7 @@ const Index = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      rotate: [-2, 2, -2],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
+        ease: [0.6, -0.05, 0.01, 0.99]
       }
     }
   };
@@ -93,20 +81,41 @@ const Index = () => {
         {/* Floating animated elements */}
         <motion.div
           className="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-red-400/20 to-blue-400/20 rounded-full blur-sm"
-          variants={floatingVariants}
-          animate="animate"
+          animate={{
+            y: [-10, 10, -10],
+            rotate: [-2, 2, -2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: [0.4, 0, 0.6, 1]
+          }}
         />
         <motion.div
           className="absolute bottom-20 right-10 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-400/20 rounded-full blur-sm"
-          variants={floatingVariants}
-          animate="animate"
-          transition={{ delay: 1 }}
+          animate={{
+            y: [-10, 10, -10],
+            rotate: [-2, 2, -2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: [0.4, 0, 0.6, 1],
+            delay: 1
+          }}
         />
         <motion.div
           className="absolute top-1/2 right-20 w-16 h-16 bg-gradient-to-br from-indigo-400/20 to-red-400/20 rounded-full blur-sm"
-          variants={floatingVariants}
-          animate="animate"
-          transition={{ delay: 2 }}
+          animate={{
+            y: [-10, 10, -10],
+            rotate: [-2, 2, -2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: [0.4, 0, 0.6, 1],
+            delay: 2
+          }}
         />
 
         <div className="container mx-auto px-6 relative z-10 max-w-6xl">
@@ -131,7 +140,7 @@ const Index = () => {
                   className="text-5xl md:text-7xl font-bold text-slate-800 mb-4"
                   initial={{ scale: 0.5, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.2, duration: 1, ease: "backOut" }}
+                  transition={{ delay: 0.2, duration: 1, ease: [0.175, 0.885, 0.32, 1.275] }}
                 >
                   Maurizio
                   <motion.span 
