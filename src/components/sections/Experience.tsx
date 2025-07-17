@@ -6,27 +6,27 @@ export const Experience = () => {
   const experiences = [
     {
       company: "HP",
-      type: "Enterprise Solutions & Security",
-      description: "Delivered cutting-edge technology solutions and advanced security implementations that strengthened enterprise infrastructure and operational excellence.",
-      icon: "🛡️"
+      type: "Enterprise Software Development",
+      description: "Led full-stack development of enterprise applications serving millions of users, implementing scalable microservices architecture and modern web technologies to deliver robust business solutions.",
+      icon: "🏢"
     },
     {
       company: "Apple",
-      type: "Innovation & Development",
-      description: "Contributed to groundbreaking technology initiatives, applying innovative problem-solving and technical expertise to enhance user experiences and system performance.",
-      icon: "🔍"
+      type: "Software Engineering & Innovation",
+      description: "Contributed to cutting-edge software projects, developing high-performance applications with focus on user experience, code quality, and innovative technical solutions using modern development practices.",
+      icon: "💻"
     },
     {
       company: "University of Toronto",
-      type: "Technology & Research",
-      description: "Spearheaded technology research and development projects at one of Canada's most prestigious institutions, driving innovation in advanced computing solutions.",
-      icon: "📊"
+      type: "Software Development & Research",
+      description: "Architected and developed complex web applications and research platforms, leveraging full-stack technologies to create scalable solutions for academic and administrative systems.",
+      icon: "🎓"
     },
     {
       company: "GTAA (Toronto Pearson)",
-      type: "Critical Infrastructure Technology",
-      description: "Led technology initiatives for one of North America's busiest airports, ensuring robust systems and seamless operations for millions of travelers.",
-      icon: "🏢"
+      type: "Mission-Critical Software Systems",
+      description: "Built and maintained critical software infrastructure supporting one of North America's busiest airports, ensuring 99.9% uptime and seamless operations for millions of travelers annually.",
+      icon: "✈️"
     }
   ];
 
@@ -41,10 +41,11 @@ export const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Proven Track Record of Excellence
+            Proven Software Development Excellence
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Trusted by industry leaders to deliver innovative technology solutions and drive digital transformation across diverse sectors.
+            Trusted by industry leaders to architect, develop, and deploy mission-critical software solutions 
+            that power business operations and deliver exceptional user experiences at scale.
           </p>
         </motion.div>
 

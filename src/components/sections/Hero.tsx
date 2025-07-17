@@ -20,11 +20,7 @@ export const Hero = () => {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
-      opacity: 1,
-      transition: { 
-        duration: 0.8,
-        ease: "easeOut"
-      }
+      opacity: 1
     }
   };
 
@@ -122,7 +118,7 @@ export const Hero = () => {
               whileHover={{ scale: 1.05, backgroundColor: "#fef2f2" }}
             >
               <Flag className="w-5 h-5 text-red-600" />
-              <span className="text-red-600 font-medium">🍁 Proud Canadian Professional</span>
+              <span className="text-red-600 font-medium">🍁 Senior Full Stack Developer</span>
             </motion.div>
 
             <div>
@@ -143,6 +139,7 @@ export const Hero = () => {
               <motion.div 
                 className="flex items-center gap-3 text-slate-600 mb-6"
                 variants={itemVariants}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <div className="flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-blue-600" />
@@ -154,19 +151,25 @@ export const Hero = () => {
             <motion.p 
               className="text-xl text-slate-700 leading-relaxed font-medium"
               variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Full Stack Developer • AI & Machine Learning Expert • Cybersecurity Specialist • Data Analytics Professional
+              Senior Full Stack Software Developer • React & Node.js Expert • Cloud Architecture Specialist • Enterprise Solutions Engineer
             </motion.p>
             
             <motion.p 
               className="text-lg text-slate-600"
               variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Passionate about leveraging artificial intelligence and advanced data analytics to create innovative solutions that drive business transformation. 
-              Two decades of experience in technology, security, and AI implementation with a focus on empowering teams and delivering exceptional results.
+              Passionate full-stack developer with 20+ years of experience building scalable web applications, robust APIs, and cloud-native solutions. 
+              Specialized in modern JavaScript frameworks, microservices architecture, and delivering high-performance applications that drive business growth.
             </motion.p>
 
-            <motion.div variants={itemVariants} className="space-y-4">
+            <motion.div 
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="space-y-4"
+            >
               {/* First row of buttons */}
               <div className="grid grid-cols-3 gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -231,7 +234,11 @@ export const Hero = () => {
           </motion.div>
 
           {/* Right Column - Image and Stats */}
-          <motion.div variants={itemVariants} className="flex flex-col items-center space-y-8">
+          <motion.div 
+            variants={itemVariants}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center space-y-8"
+          >
             <motion.img 
               src="/lovable-uploads/8adf3f6a-3592-4fa3-b22e-6353866d49a7.png" 
               alt="Maurizio Cavalieri" 
@@ -253,24 +260,10 @@ export const Hero = () => {
                   className="text-2xl mx-auto mb-2"
                   whileHover={{ scale: 1.2, rotate: 10 }}
                 >
-                  🏆
-                </motion.div>
-                <div className="text-2xl font-bold text-slate-800">20+</div>
-                <div className="text-sm text-slate-600">Years Experience</div>
-              </motion.div>
-              
-              <motion.div 
-                className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
-                whileHover={{ y: -5 }}
-              >
-                <motion.div 
-                  className="text-2xl mx-auto mb-2"
-                  whileHover={{ scale: 1.2, rotate: 10 }}
-                >
                   💻
                 </motion.div>
-                <div className="text-2xl font-bold text-slate-800">5★</div>
-                <div className="text-sm text-slate-600">Top Rated</div>
+                <div className="text-2xl font-bold text-slate-800">20+</div>
+                <div className="text-sm text-slate-600">Years Coding</div>
               </motion.div>
               
               <motion.div 
@@ -283,8 +276,22 @@ export const Hero = () => {
                 >
                   🚀
                 </motion.div>
-                <div className="text-2xl font-bold text-slate-800">CEO</div>
-                <div className="text-sm text-slate-600">LevelThree Co</div>
+                <div className="text-2xl font-bold text-slate-800">100+</div>
+                <div className="text-sm text-slate-600">Projects Built</div>
+              </motion.div>
+              
+              <motion.div 
+                className="text-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200"
+                whileHover={{ y: -5 }}
+              >
+                <motion.div 
+                  className="text-2xl mx-auto mb-2"
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                >
+                  ⭐
+                </motion.div>
+                <div className="text-2xl font-bold text-slate-800">5★</div>
+                <div className="text-sm text-slate-600">Top Rated</div>
               </motion.div>
             </div>
           </motion.div>

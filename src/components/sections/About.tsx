@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Building, Star, GraduationCap, Shield, BarChart3, Users } from "lucide-react";
+import { Code, Database, Cloud, Smartphone, Globe, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 export const About = () => {
@@ -15,11 +15,11 @@ export const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
-            Innovation Through Technology
+            Full Stack Development Expertise
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            From Fortune 500 companies to innovative startups, I've consistently delivered 
-            exceptional results across technology, security, and business transformation initiatives.
+            From modern React frontends to scalable Node.js backends, I build complete web solutions 
+            that deliver exceptional user experiences and robust performance across the entire technology stack.
           </p>
         </motion.div>
 
@@ -34,16 +34,17 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <Shield className="w-6 h-6 text-red-600" />
-                  Cybersecurity Expert
+                  <Code className="w-6 h-6 text-blue-600" />
+                  Frontend Development
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Enterprise Security & Risk Management
+                  Modern React & TypeScript
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Leading security initiatives, threat detection, and risk management strategies for enterprise environments, including SOC operations and incident response.
+                  Building responsive, interactive user interfaces with React, Next.js, TypeScript, and modern CSS frameworks. 
+                  Focused on performance optimization and exceptional user experiences.
                 </p>
               </CardContent>
             </Card>
@@ -59,16 +60,17 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <BarChart3 className="w-6 h-6 text-blue-600" />
-                  Data Analytics Leader
+                  <Database className="w-6 h-6 text-green-600" />
+                  Backend Development
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Advanced Analytics & Business Intelligence
+                  Node.js & API Architecture
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Transforming complex data into actionable insights through advanced analytics, machine learning, and custom dashboards that drive strategic decisions.
+                  Developing robust RESTful APIs and GraphQL services with Node.js, Express, and modern database solutions. 
+                  Expert in microservices architecture and scalable backend systems.
                 </p>
               </CardContent>
             </Card>
@@ -84,16 +86,17 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <Users className="w-6 h-6 text-green-600" />
-                  Team Development
+                  <Cloud className="w-6 h-6 text-purple-600" />
+                  Cloud Architecture
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Leadership & Mentorship
+                  AWS & Docker Deployment
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Building and mentoring high-performing teams across technology, security, and analytics to achieve exceptional results and drive innovation.
+                  Designing and deploying cloud-native applications on AWS, implementing CI/CD pipelines, 
+                  containerization with Docker, and ensuring high availability and scalability.
                 </p>
               </CardContent>
             </Card>
@@ -109,16 +112,17 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <Building className="w-6 h-6 text-purple-600" />
-                  CEO & Founder
+                  <Smartphone className="w-6 h-6 text-orange-600" />
+                  Mobile Development
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  LevelThree Co.
+                  React Native & PWA
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Leading innovative technology solutions and driving business growth through strategic implementation and entrepreneurial vision.
+                  Creating cross-platform mobile applications with React Native and Progressive Web Apps 
+                  that deliver native-like experiences across iOS and Android platforms.
                 </p>
               </CardContent>
             </Card>
@@ -134,16 +138,17 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <Star className="w-6 h-6 text-yellow-500" />
-                  Top Rated Professional
+                  <Globe className="w-6 h-6 text-cyan-600" />
+                  Web Technologies
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  Freelance Excellence
+                  Modern Web Standards
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Delivering exceptional technology and consulting services with consistently outstanding client satisfaction across multiple platforms.
+                  Leveraging the latest web technologies including WebAssembly, Service Workers, 
+                  Web Components, and modern browser APIs to build cutting-edge web applications.
                 </p>
               </CardContent>
             </Card>
@@ -159,16 +164,17 @@ export const About = () => {
             <Card className="bg-white/80 backdrop-blur-sm border-slate-200 h-full shadow-lg hover:shadow-xl transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-slate-800 flex items-center gap-2">
-                  <GraduationCap className="w-6 h-6 text-red-600" />
-                  Alumni
+                  <Zap className="w-6 h-6 text-yellow-500" />
+                  Performance Optimization
                 </CardTitle>
                 <CardDescription className="text-slate-600">
-                  University of Toronto, Canada
+                  Speed & Scalability
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-slate-600">
-                  Proud alumnus of one of Canada's most prestigious institutions, building on a strong academic foundation to drive innovation and excellence in technology leadership.
+                  Optimizing application performance through code splitting, lazy loading, caching strategies, 
+                  and advanced profiling techniques to ensure lightning-fast user experiences.
                 </p>
               </CardContent>
             </Card>
