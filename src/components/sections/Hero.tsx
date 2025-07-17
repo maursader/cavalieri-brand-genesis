@@ -23,7 +23,7 @@ export const Hero = () => {
       opacity: 1,
       transition: { 
         duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94]
+        ease: "easeOut"
       }
     }
   };
@@ -130,7 +130,7 @@ export const Hero = () => {
                 className="text-5xl md:text-7xl font-bold text-slate-800 mb-4"
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
               >
                 Maurizio
                 <motion.span 
