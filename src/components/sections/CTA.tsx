@@ -27,6 +27,7 @@ export const CTA = () => {
             <Button 
               size="lg" 
               className="bg-white text-blue-600 hover:bg-blue-50 border-0 text-lg px-8 py-6 shadow-lg font-semibold"
+              onClick={() => window.open('https://tidycal.com/l3', '_blank')}
             >
               Get In Touch
               <motion.div

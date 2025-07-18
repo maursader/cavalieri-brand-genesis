@@ -7,25 +7,25 @@ export const Experience = () => {
     {
       company: "HP",
       type: "Enterprise Software Development",
-      description: "Led full-stack development of enterprise applications serving millions of users, implementing scalable microservices architecture and modern web technologies to deliver robust business solutions.",
+      description: "Contributed to enterprise-level software development projects, working with large-scale systems and modern technologies to support business operations and user experiences.",
       icon: "🏢"
     },
     {
       company: "Apple",
       type: "Software Engineering & Innovation",
-      description: "Contributed to cutting-edge software projects, developing high-performance applications with focus on user experience, code quality, and innovative technical solutions using modern development practices.",
+      description: "Participated in software development initiatives, focusing on application development, code quality, and technical solutions using industry-standard development practices.",
       icon: "💻"
     },
     {
       company: "University of Toronto",
       type: "Software Development & Research",
-      description: "Architected and developed complex web applications and research platforms, leveraging full-stack technologies to create scalable solutions for academic and administrative systems.",
+      description: "Developed web applications and digital platforms, utilizing full-stack technologies to create solutions for academic and administrative environments.",
       icon: "🎓"
     },
     {
       company: "GTAA (Toronto Pearson)",
       type: "Mission-Critical Software Systems",
-      description: "Built and maintained critical software infrastructure supporting one of North America's busiest airports, ensuring 99.9% uptime and seamless operations for millions of travelers annually.",
+      description: "Worked on software infrastructure projects supporting airport operations, contributing to systems reliability and operational efficiency.",
       icon: "✈️"
     }
   ];

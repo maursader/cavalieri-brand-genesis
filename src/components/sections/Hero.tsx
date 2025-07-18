@@ -173,13 +173,22 @@ export const Hero = () => {
               {/* First row of buttons */}
               <div className="grid grid-cols-3 gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button size="lg" className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-lg">
+                  <Button 
+                    size="lg" 
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white border-0 shadow-lg"
+                    onClick={() => window.open('https://www.linkedin.com/in/cavalierim/', '_blank')}
+                  >
                     <Linkedin className="w-5 h-5 mr-2" />
                     LinkedIn
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button size="lg" variant="outline" className="w-full border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg">
+                  <Button 
+                    size="lg" 
+                    variant="outline" 
+                    className="w-full border-slate-300 text-slate-700 hover:bg-slate-50 shadow-lg"
+                    onClick={() => window.open('https://github.com/maursader', '_blank')}
+                  >
                     <Github className="w-5 h-5 mr-2" />
                     GitHub
                   </Button>
@@ -199,7 +208,7 @@ export const Hero = () => {
                     size="lg" 
                     variant="outline" 
                     className="w-full border-green-300 text-green-700 hover:bg-green-50 shadow-lg"
-                    onClick={() => window.open('https://www.fiverr.com/maurizio_c', '_blank')}
+                    onClick={() => window.open('https://www.fiverr.com/levelthreeco', '_blank')}
                   >
                     <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M22.285 7.875c-.26-.26-.682-.26-.942 0l-7.285 7.285-3.285-3.285c-.26-.26-.682-.26-.942 0-.26.26-.26.682 0 .942l3.756 3.756c.26.26.682.26.942 0l7.756-7.756c.26-.26.26-.682 0-.942zm-17.285 8.125h-3v2h3v-2zm5-4h-8v2h8v-2zm3-4h-11v2h11v-2z"/>
@@ -212,7 +221,7 @@ export const Hero = () => {
                     size="lg" 
                     variant="outline" 
                     className="w-full border-purple-300 text-purple-700 hover:bg-purple-50 shadow-lg"
-                    onClick={() => window.open('https://www.upwork.com/maurizio-c', '_blank')}
+                    onClick={() => window.open('https://www.upwork.com/freelancers/~01db9f0749592970d3', '_blank')}
                   >
                     <Briefcase className="w-5 h-5 mr-2" />
                     Upwork
