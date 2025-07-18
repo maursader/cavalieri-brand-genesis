@@ -161,7 +161,7 @@ export const Hero = () => {
               variants={itemVariants}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Passionate full-stack developer with 20+ years of experience building scalable web applications, robust APIs, and cloud-native solutions. 
+              Passionate full-stack developer with 13+ years of experience building scalable web applications, robust APIs, and cloud-native solutions. 
               Specialized in modern JavaScript frameworks, microservices architecture, and delivering high-performance applications that drive business growth.
             </motion.p>
 
@@ -271,7 +271,7 @@ export const Hero = () => {
                 >
                   💻
                 </motion.div>
-                <div className="text-2xl font-bold text-slate-800">20+</div>
+                <div className="text-2xl font-bold text-slate-800">13+</div>
                 <div className="text-sm text-slate-600">Years Coding</div>
               </motion.div>
               
